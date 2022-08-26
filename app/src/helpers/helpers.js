@@ -8,10 +8,6 @@ export const reqAxios = async (method, shortUrl, param, data) => {
         url: API_URL + shortUrl,
         params: param,
         data: data,
-        // headers: {
-        //   Accept: "application/JSON",
-        //   "Content-Type": "application/json",
-        // },
       });
       return res;
     } catch (error) {
