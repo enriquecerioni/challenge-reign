@@ -1,0 +1,50 @@
+.Rectangle {
+  width: 550px;
+  height: 90px;
+  margin: 38px 40px 30px 150px;
+  padding: 0 0 0 26px;
+  opacity: 0.8;
+  border-radius: 6px;
+  border: solid 1px #979797;
+  background-color: #fff;
+}
+.Realize-for-React-fo {
+    
+  width: 440px;
+  height: 40px;
+  margin: 36px 16px 14px 0;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  color: #606060;
+}
+.-hours-ago-by-autho {
+  width: 107px;
+  height: 13px;
+  margin: 16px 325px 7px 8px;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #767676;
+}
+
+.grid div {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.gridCard:hover {
+    border: 1px solid #3985cb;
+}
+
+.gridCard {
+    display: grid;
+    grid-template-columns: 85% 15%;
+}

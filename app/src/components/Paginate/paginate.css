@@ -1,0 +1,29 @@
+.ulPaginate {
+  display: flex;
+  background-color: #ecf0f1;
+  justify-content: space-around;
+  border-radius: 2rem;
+}
+
+li {
+  list-style: none;
+  padding: 0.7rem;
+}
+
+.button {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 0.7rem;
+  background-color: #3985cb;
+  border-radius: 50%;
+  border: none;
+  border: 1px solid #3985cb;
+  color: white;
+  font-size: 15px;
+  transition: 0.5s ease;
+}
+
+.button:hover {
+  color: black;
+  background-color: transparent;
+}

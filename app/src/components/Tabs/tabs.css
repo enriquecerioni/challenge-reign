@@ -3,3 +3,18 @@
     justify-content: center;
     align-items: center;
 }
+
+.buttonTab{
+    width: 100px;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 20px;
+    border: solid 1px black;
+    color: white;
+    background-color: #3985cb;
+}
+
+.buttonTab:hover {
+    background-color: transparent;
+    transition: 0.5s;
+    color: black;
+}

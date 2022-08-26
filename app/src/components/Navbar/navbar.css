@@ -1,0 +1,10 @@
+.navbar{
+    height: 100px;
+    text-align: left;
+}
+
+.title{
+    font-family: 'Open Sans', sans-serif; 
+    margin-left: 250px;
+    font-size: 30px;
+}
