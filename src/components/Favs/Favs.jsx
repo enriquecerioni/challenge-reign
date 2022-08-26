@@ -14,6 +14,7 @@ const Favs = () => {
               title={fav.story_title}
               created_at={fav.created_at}
               comment={fav}
+              key={i}
             />
           );
         })

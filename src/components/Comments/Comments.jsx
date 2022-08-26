@@ -9,8 +9,7 @@ const Comments = () => {
   const react = JSON.parse(localStorage.getItem("reactComments"));
   const angular = JSON.parse(localStorage.getItem("angularComments"));
   const vue = JSON.parse(localStorage.getItem("vueComments"));
-  const all = react.concat(angular, vue);
-
+  const allComments = JSON.parse(localStorage.getItem("all"));
   // Paginate
   const [currentPage, setCurrentPage] = useState(1);
   const [commentsPerPage, setcommentsPerPage] = useState(8);
@@ -21,7 +20,7 @@ const Comments = () => {
     indexLastComment - commentsPerPage
   );
   const [currentComments, setCurrentComments] = useState(
-    all.slice(indexFirstComment, indexLastComment)
+    allComments.slice(indexFirstComment, indexLastComment)
   );
 
   const paginate = (pageNumber) => {
@@ -42,22 +41,26 @@ const Comments = () => {
   useEffect(() => {
     console.log("cambio current");
     // setIndexLastComment(currentPage * commentsPerPage);
-    if (type === "reactjs") {
-      setCurrentComments(react.slice(indexFirstComment, indexLastComment));
-    } else if (type === "angular") {
-      setCurrentComments(angular.slice(indexFirstComment, indexLastComment));
-    } else if (type === "vuejs") {
-      setCurrentComments(vue.slice(indexFirstComment, indexLastComment));
-    } else {
-      setCurrentComments(all.slice(indexFirstComment, indexLastComment));
-    }
+    setTimeout(() => {
+      if (type === "reactjs") {
+        setCurrentComments(react.slice(indexFirstComment, indexLastComment));
+      } else if (type === "angular") {
+        setCurrentComments(angular.slice(indexFirstComment, indexLastComment));
+      } else if (type === "vuejs") {
+        setCurrentComments(vue.slice(indexFirstComment, indexLastComment));
+      } else {
+        setCurrentComments(allComments.slice(indexFirstComment, indexLastComment));
+      }
+  }, 1);
+    
   }, [currentPage,type]);
 
   return (
     <div>
       <div className="gridSelect">
         <select className="optionSelect" onChange={(e) => handleType(e)}>
-          <option value="all">All</option>
+          <option value="">Select any tool</option>
+          {allComments.length ? <option value="all">All</option> : null}
           <option value="angular">
             Angular
           </option>
@@ -67,7 +70,8 @@ const Comments = () => {
       </div>
 
       <div className="grid">
-        {currentComments.map((comment, i) => {
+        {
+        currentComments.length ? currentComments.map((comment, i) => {
           return (
             <Card
               title={comment.story_title}
@@ -76,14 +80,16 @@ const Comments = () => {
               key={i}
             />
           );
-        })}
+        })
+      : <h1 className="noComments">"You have not selected any tool..."</h1>
+      }
       </div>
       <div className="gridPaginate">
         <Paginate
           commentsPerPage={commentsPerPage}
           all={
             type === "all"
-              ? all.length
+              ? allComments.length
               : type === "reactjs"
               ? react.length
               : type === "angular"
