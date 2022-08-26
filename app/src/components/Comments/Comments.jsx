@@ -60,11 +60,6 @@ const Comments = () => {
           <option value="all">All</option>
           <option value="angular">
             Angular
-            <img
-              className="img"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png"
-              alt="no image"
-            />
           </option>
           <option value="reactjs">Reactjs</option>
           <option value="vuejs">Vuejs</option>
