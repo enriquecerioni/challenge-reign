@@ -9,6 +9,10 @@ import Navbar from './components/Navbar/Navbar';
 const App = () =>{
   
   localStorage.setItem('favList', JSON.stringify([]));
+  localStorage.setItem('reactComments', JSON.stringify([]));
+  localStorage.setItem('angularComments', JSON.stringify([]));
+  localStorage.setItem('vueComments', JSON.stringify([]));
+  
   const [all, setAll] = useState(true);
 
   const getReactComments = async () => {
